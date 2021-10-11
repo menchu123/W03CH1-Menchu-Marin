@@ -32,12 +32,18 @@ const addCharacterPhoto = (img) => {
   characterPhoto.src = img;
 };
 
+const addCharacterName = (personaje) => {
+  const characterName = document.querySelector(".character__name");
+  characterName.textContent = `${personaje.nombre} ${personaje.familia}`;
+};
+
 const characterCardAdd = (array) => {
   for (const character of array) {
     const newCharacter = characterCard.cloneNode(true);
     characterList.appendChild(newCharacter);
 
     addCharacterPhoto(`img/${character.nombre}.jpg`);
+    addCharacterName(character);
   }
 };
 
