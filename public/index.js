@@ -33,8 +33,13 @@ const addCharacterPhoto = (img) => {
 };
 
 const addCharacterName = (personaje) => {
-  const characterName = document.querySelector(".character__name");
+  const characterName = document.querySelector(".character__age");
   characterName.textContent = `${personaje.nombre} ${personaje.familia}`;
+};
+
+const addCharacterAge = (personaje) => {
+  const characterAge = document.querySelector(".character__age");
+  characterAge.textContent = `Edad: ${personaje.edad}`;
 };
 
 const characterCardAdd = (array) => {
@@ -44,6 +49,7 @@ const characterCardAdd = (array) => {
 
     addCharacterPhoto(`img/${character.nombre}.jpg`);
     addCharacterName(character);
+    addCharacterAge(character);
   }
 };
 
