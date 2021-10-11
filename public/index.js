@@ -6,7 +6,7 @@ import Rey from "./scripts/Rey.js";
 
 const joffrey = new Rey("Joffrey", Personaje.familia.lannister, 15, 1);
 const jamie = new Luchador(
-  "Jaime",
+  "Jamie",
   Personaje.familia.lannister,
   32,
   "Fake hand",
@@ -27,13 +27,19 @@ const personajes = [joffrey, jamie, daenerys, tyrion, bronn];
 const characterList = document.querySelector(".characters-list");
 const characterCard = document.querySelector(".character");
 
+const addCharacterPhoto = (img) => {
+  const characterPhoto = document.querySelector(".character__picture");
+  characterPhoto.src = img;
+};
+
 const characterCardAdd = (array) => {
   for (const character of array) {
     const newCharacter = characterCard.cloneNode(true);
     characterList.appendChild(newCharacter);
+
+    addCharacterPhoto(`img/${character.nombre}.jpg`);
   }
 };
 
 characterCardAdd(personajes);
-
-characterCard.style.display = "none";
+// characterCard.style.display = "none";
