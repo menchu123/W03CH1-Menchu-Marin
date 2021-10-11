@@ -23,17 +23,17 @@ const tyrion = new Asesor("Tyrion", Personaje.familia.lannister, 24, daenerys);
 const bronn = new Escudero("Bronn", Personaje.familia.blackwater, 36, jamie, 2);
 
 const personajes = [joffrey, jamie, daenerys, tyrion, bronn];
-console.log(personajes);
 
-const comunicados = personajes
-  .filter((personaje) => personaje instanceof Luchador)
-  .map((personaje) => personaje.comunicar());
+const characterList = document.querySelector(".characters-list");
+const characterCard = document.querySelector(".character");
 
-console.log(joffrey.serie);
-comunicados.forEach((mensaje) => console.log(mensaje));
-console.log(`Jaime vivo ? ${jamie.vivo}`);
-console.log(`Tyirion vivo ? ${tyrion.vivo}`);
-jamie.morir();
-tyrion.morir();
-console.log(`Jaime vivo ? ${jamie.vivo}`);
-console.log(`Tyirion vivo ? ${tyrion.vivo}`);
+const characterCardAdd = (array) => {
+  for (const character of array) {
+    const newCharacter = characterCard.cloneNode(true);
+    characterList.appendChild(newCharacter);
+  }
+};
+
+characterCardAdd(personajes);
+
+characterCard.style.display = "none";
