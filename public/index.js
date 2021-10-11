@@ -1,8 +1,8 @@
-import Asesor from "./Asesor.js";
-import Escudero from "./Escudero.js";
-import Luchador from "./Luchador.js";
-import Personaje from "./Personaje.js";
-import Rey from "./Rey.js";
+import Asesor from "./scripts/Asesor.js";
+import Escudero from "./scripts/Escudero.js";
+import Luchador from "./scripts/Luchador.js";
+import Personaje from "./scripts/Personaje.js";
+import Rey from "./scripts/Rey.js";
 
 const joffrey = new Rey("Joffrey", Personaje.familia.arryn, 17, 2);
 const jaime = new Luchador("Jaime", Personaje.familia.stark, 30, "AK-47", 7);
