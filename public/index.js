@@ -53,39 +53,48 @@ const isCharacterAlive = (personaje) => {
   }
 };
 
-// const whatProperties = (personaje) => {
-//   let properties = [];
-//   if (personaje instanceof Rey) {
-
-//   }
-// }
 console.log(bronn.luchador);
 
 const addCharacterData = (personaje) => {
-  const dataList = document.querySelector(".charactar__dataList");
-  const dataElement = document.createElement("li");
-  if (personaje instanceof Rey) {
-    dataList.appendChild(dataElement);
-    dataElement.innerHTML = "";
-    dataElement.textContent = `Años de reinado: ${personaje.anosReinado}`;
-  } else if (personaje instanceof Luchador) {
-    dataList.appendChild(dataElement);
-    dataElement.innerHTML = "";
-    dataElement.textContent = `Arma: ${personaje.arma}`;
-    const dataElement2 = dataElement.cloneNode(true);
-    dataElement2.textContent = `Destreza: ${personaje.destreza}`;
-  } else if (personaje instanceof Escudero) {
-    dataList.appendChild(dataElement);
-    dataElement.innerHTML = "";
-    dataElement.textContent = `Sirve a: ${personaje.luchador.nombre}`;
-    const dataElement2 = dataElement.cloneNode(true);
-    dataElement2.textContent = `Peloteo: ${personaje.pelotismo}`;
-  } else if (personaje instanceof Asesor) {
-    dataList.appendChild(dataElement);
-    dataElement.innerHTML = "";
-    dataElement.textContent = `Asesora a: ${personaje.asesorado.nombre}`;
+  const anosList = document.querySelector(".anos");
+  const armaList = document.querySelector(".arma");
+  const destrezaList = document.querySelector(".destreza");
+  const peloteoList = document.querySelector(".peloteo");
+  const asesoraList = document.querySelector(".asesora");
+  const sirveList = document.querySelector(".sirve");
+  if (personaje.hasOwnProperty("anosReinado") === false) {
+    anosList.textContent = "";
+  } else {
+    anosList.textContent = `Años de reinado: ${personaje.anosReinado}`;
+  }
+  if (personaje.hasOwnProperty("arma") === false) {
+    armaList.textContent = "";
+  } else {
+    armaList.textContent = `Arma: ${personaje.arma}`;
+  }
+  if (personaje.hasOwnProperty("destreza") === false) {
+    destrezaList.textContent = "";
+  } else {
+    destrezaList.textContent = `Destreza: ${personaje.destreza}`;
+  }
+  if (personaje.hasOwnProperty("pelotismo") === false) {
+    peloteoList.textContent = "";
+  } else {
+    peloteoList.textContent = `Pelotismo: ${personaje.pelotismo}`;
+  }
+  if (personaje.hasOwnProperty("asesorado") === false) {
+    asesoraList.textContent = "";
+  } else {
+    asesoraList.textContent = `Asesora a: ${personaje.asesorado.nombre}`;
+  }
+  if (personaje.hasOwnProperty("luchador") === false) {
+    sirveList.textContent = "";
+  } else {
+    sirveList.textContent = `Sirve a: ${personaje.luchador.nombre}`;
   }
 };
+
+console.log(tyrion instanceof Rey);
 
 const characterCardAdd = (array) => {
   for (const character of array) {
@@ -101,4 +110,4 @@ const characterCardAdd = (array) => {
 };
 
 characterCardAdd(personajes);
-// characterCard.style.display = "none";
+// characterCard.style.display = "none"
