@@ -6,9 +6,10 @@ class Personaje {
   comunicado = "Yo soy un personaje indefinido :(";
 
   static familia = {
-    arryn: "casa arryn",
-    stark: "casa stark",
-    targaryan: "casa targaryan",
+    lannister: "Lannister",
+    stark: "Stark",
+    targaryen: "Targaryen",
+    blackwater: "Blackwater",
   };
 
   constructor(nombre, familia, edad) {

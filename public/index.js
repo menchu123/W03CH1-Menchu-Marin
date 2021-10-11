@@ -4,13 +4,25 @@ import Luchador from "./scripts/Luchador.js";
 import Personaje from "./scripts/Personaje.js";
 import Rey from "./scripts/Rey.js";
 
-const joffrey = new Rey("Joffrey", Personaje.familia.arryn, 17, 2);
-const jaime = new Luchador("Jaime", Personaje.familia.stark, 30, "AK-47", 7);
-const daenerys = new Luchador("Daenerys", Personaje.familia.stark, 20, "AK", 7);
-const tyrion = new Asesor("Tyirion", Personaje.familia.stark, 28, daenerys);
-const bronn = new Escudero("Bronn", Personaje.familia.stark, 28, jaime, 7);
+const joffrey = new Rey("Joffrey", Personaje.familia.lannister, 15, 1);
+const jamie = new Luchador(
+  "Jaime",
+  Personaje.familia.lannister,
+  32,
+  "Fake hand",
+  6
+);
+const daenerys = new Luchador(
+  "Daenerys",
+  Personaje.familia.targaryen,
+  19,
+  "Dragons",
+  9
+);
+const tyrion = new Asesor("Tyrion", Personaje.familia.lannister, 24, daenerys);
+const bronn = new Escudero("Bronn", Personaje.familia.blackwater, 36, jamie, 2);
 
-const personajes = [joffrey, jaime, daenerys, tyrion, bronn];
+const personajes = [joffrey, jamie, daenerys, tyrion, bronn];
 console.log(personajes);
 
 const comunicados = personajes
@@ -19,9 +31,9 @@ const comunicados = personajes
 
 console.log(joffrey.serie);
 comunicados.forEach((mensaje) => console.log(mensaje));
-console.log(`Jaime vivo ? ${jaime.vivo}`);
+console.log(`Jaime vivo ? ${jamie.vivo}`);
 console.log(`Tyirion vivo ? ${tyrion.vivo}`);
-jaime.morir();
+jamie.morir();
 tyrion.morir();
-console.log(`Jaime vivo ? ${jaime.vivo}`);
+console.log(`Jaime vivo ? ${jamie.vivo}`);
 console.log(`Tyirion vivo ? ${tyrion.vivo}`);
