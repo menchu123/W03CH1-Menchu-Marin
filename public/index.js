@@ -23,3 +23,5 @@ const tyrion = new Asesor("Tyrion", Personaje.familia.lannister, 24, daenerys);
 const bronn = new Escudero("Bronn", Personaje.familia.blackwater, 36, jamie, 2);
 
 const personajes = [joffrey, jamie, daenerys, tyrion, bronn];
+
+export default personajes;
