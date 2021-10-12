@@ -6,7 +6,7 @@ import Rey from "./scripts/Rey.js";
 
 const joffrey = new Rey("Joffrey", Personaje.familia.lannister, 15, 1);
 const jamie = new Luchador(
-  "Jaime",
+  "Jamie",
   Personaje.familia.lannister,
   32,
   "Fake hand",
@@ -23,5 +23,6 @@ const tyrion = new Asesor("Tyrion", Personaje.familia.lannister, 24, daenerys);
 const bronn = new Escudero("Bronn", Personaje.familia.blackwater, 36, jamie, 2);
 
 const personajes = [joffrey, jamie, daenerys, tyrion, bronn];
+
 
 export default personajes;
